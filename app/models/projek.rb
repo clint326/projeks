@@ -1,0 +1,2 @@
+class Projek < ApplicationRecord
+end

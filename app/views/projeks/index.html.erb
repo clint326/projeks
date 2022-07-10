@@ -1,0 +1,42 @@
+<h1 class="title">Projeks</h1>
+
+<p style="color: green" class="mb-4"><%= notice %></p>
+
+<%= link_to "New projek", new_projek_path, class: "button is-link" %>
+
+<hr>
+
+<div id="projeks">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>actions</th>
+        <th>status</th>
+        <th>name</th>
+        <th>notes</th>
+        <th>created</th>
+        <th>updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @projeks.each do |projek| %>
+        <tr>
+          <td>
+            <%= link_to "show", projek %>
+            <%= link_to "edit", edit_projek_path(projek) %>
+            <%= link_to "delete", projek, method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+          <td><%= projek.status %></td>
+          <td><%= projek.name %></td>
+          <td><%= projek.notes %></td>
+          <td><%= projek.created_at %></td>
+          <td><%= projek.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</div>
+
+
